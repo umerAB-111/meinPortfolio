@@ -74,7 +74,7 @@ function ContactSection() {
             Let's Talk
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mt-4">
-            Get In Touch
+            Contact Me
           </h2>
           <p className="text-text-secondary mt-4 max-w-xl mx-auto">
             Have a project in mind or want to collaborate? Feel free to reach

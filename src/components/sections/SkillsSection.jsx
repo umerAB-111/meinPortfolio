@@ -1,49 +1,50 @@
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { useRef } from 'react'
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useRef } from "react";
 
 const skillCategories = [
   {
-    title: 'Frontend Development',
+    title: "Frontend Development",
     skills: [
-      { name: 'React / Next.js', level: 95 },
-      { name: 'TypeScript', level: 90 },
-      { name: 'Tailwind CSS', level: 95 },
-      { name: 'Three.js / WebGL', level: 85 },
+      { name: "React / Next.js", level: 75 },
+      { name: "TypeScript", level: 85 },
+      { name: "Tailwind CSS", level: 70 },
+      { name: "Three.js / WebGL", level: 65 },
     ],
   },
   {
-    title: 'Backend & APIs',
+    title: "Backend & APIs",
     skills: [
-      { name: 'Node.js', level: 92 },
-      { name: 'Python', level: 85 },
-      { name: 'PostgreSQL', level: 88 },
-      { name: 'GraphQL', level: 82 },
+      { name: "Node.js", level: 92 },
+      { name: "Python", level: 85 },
+      { name: "C++", level: 60 },
+      { name: "PostgreSQL", level: 88 },
+      { name: "GraphQL", level: 82 },
     ],
   },
   {
-    title: 'Cloud & DevOps',
+    title: "Cloud & DevOps",
     skills: [
-      { name: 'AWS', level: 88 },
-      { name: 'Docker / K8s', level: 85 },
-      { name: 'CI/CD Pipelines', level: 82 },
-      { name: 'Terraform', level: 75 },
+      { name: "AWS", level: 70 },
+      { name: "Docker / K8s", level: 55 },
+      { name: "CI/CD Pipelines", level: 82 },
+      { name: "Terraform", level: 55 },
     ],
   },
   {
-    title: 'Design & Tools',
+    title: "Design & Tools",
     skills: [
-      { name: 'Figma', level: 85 },
-      { name: 'Git', level: 95 },
-      { name: 'Agile/Scrum', level: 90 },
-      { name: 'Testing', level: 80 },
+      { name: "Figma", level: 70 },
+      { name: "Git", level: 75 },
+      { name: "Agile/Scrum", level: 60 },
+      { name: "Testing", level: 60 },
     ],
   },
-]
+];
 
 function SkillCard({ category, index }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-50px' })
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <motion.div
@@ -61,7 +62,9 @@ function SkillCard({ category, index }) {
           <div key={skill.name}>
             <div className="flex justify-between mb-2">
               <span className="text-text-secondary">{skill.name}</span>
-              <span className="text-accent-pink font-mono text-sm">{skill.level}%</span>
+              <span className="text-accent-pink font-mono text-sm">
+                {skill.level}%
+              </span>
             </div>
             <div className="h-2 bg-bg-tertiary rounded-full overflow-hidden">
               <motion.div
@@ -75,12 +78,12 @@ function SkillCard({ category, index }) {
         ))}
       </div>
     </motion.div>
-  )
+  );
 }
 
 function SkillsSection() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-100px' })
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="skills" className="py-32 px-6 bg-bg-secondary/30" ref={ref}>
@@ -106,7 +109,7 @@ function SkillsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default SkillsSection
+export default SkillsSection;

@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 function HeroSection() {
   return (
@@ -15,7 +15,7 @@ function HeroSection() {
           className="mb-4"
         >
           <span className="text-accent-cyan font-mono text-sm tracking-wider">
-            {'<Hello />'}
+            {"<Hello />"}
           </span>
         </motion.div>
 
@@ -25,8 +25,7 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6"
         >
-          I'm a{' '}
-          <span className="text-gradient">Full Stack</span>
+          I'm a <span className="text-gradient">Full Stack</span>
           <br />
           Developer
         </motion.h1>
@@ -37,8 +36,8 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto mb-10"
         >
-          Crafting exceptional digital experiences with cutting-edge technologies.
-          Specialized in React, Node.js, and cloud architecture.
+          Crafting exceptional digital experiences with cutting-edge
+          technologies. Specialized in React, Node.js, and cloud architecture.
         </motion.p>
 
         <motion.div
@@ -57,7 +56,7 @@ function HeroSection() {
             href="#contact"
             className="px-8 py-4 border border-accent-purple text-accent-purple font-semibold rounded-lg hover:bg-accent-purple/10 transition-all duration-300 hover:-translate-y-1"
           >
-            Get In Touch
+            Get In Info
           </a>
         </motion.div>
       </div>
@@ -71,7 +70,7 @@ function HeroSection() {
         <ChevronDown className="text-accent-cyan" size={32} />
       </motion.div>
     </section>
-  )
+  );
 }
 
-export default HeroSection
+export default HeroSection;
