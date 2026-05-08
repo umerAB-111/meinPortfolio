@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Navbar from '../navigation/Navbar'
 import ThreeEnvironment from '../three/ThreeEnvironment'
+import ErrorBoundary from '../ui/ErrorBoundary'
 
 function Layout() {
   const { theme } = useSelector((state) => state.ui)
@@ -17,7 +18,9 @@ function Layout() {
 
   return (
     <div className="min-h-screen bg-bg-primary relative overflow-hidden">
-      <ThreeEnvironment />
+      <ErrorBoundary>
+        <ThreeEnvironment />
+      </ErrorBoundary>
       <Navbar />
       <main>
         <Outlet />
