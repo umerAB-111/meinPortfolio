@@ -1,7 +1,7 @@
 {
   "name": "expertportfolio",
-  "version": "1.0.0",
   "homepage": "https://umerab-111.github.io/meinPortfolio",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-three/drei": "^9.92.0",
     "@react-three/fiber": "^8.15.0",
     "@reduxjs/toolkit": "^2.0.0",

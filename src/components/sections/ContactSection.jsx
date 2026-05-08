@@ -5,9 +5,12 @@ import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   updateFormData,
+  submitForm,
   submitFormSuccess,
+  submitFormError,
   resetForm,
 } from "../../store/slices/contactSlice";
+import emailjs from "@emailjs/browser";
 import {
   Send,
   Github,
@@ -47,9 +50,23 @@ function ContactSection() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      setTimeout(() => {
-        dispatch(submitFormSuccess());
-      }, 1500);
+      dispatch(submitForm());
+
+      emailjs
+        .send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            message: formData.message,
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          () => dispatch(submitFormSuccess()),
+          (error) => dispatch(submitFormError(error.text))
+        );
     }
   };
 
@@ -117,6 +134,11 @@ function ContactSection() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {status === "error" && (
+                    <div className="p-4 bg-red-500/10 border border-red-500 rounded-lg text-red-500 text-sm">
+                      Failed to send. Please try again or email me directly.
+                    </div>
+                  )}
                   <div>
                     <label className="block text-sm text-text-secondary mb-2">
                       Name
