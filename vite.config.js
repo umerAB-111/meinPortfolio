@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ command }) => {
   return defineConfig({
-    base: command === 'build' ? '/meinPortfolio/' : '/',
+    base: '/',
     plugins: [react()],
     resolve: {
       alias: {
